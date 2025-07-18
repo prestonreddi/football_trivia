@@ -4,7 +4,11 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 """
-Model for questions
+Represents a trivia question.
+
+Attributes:
+        text (str): The text content of the question.
+        
 """
 class Question(models.Model):
     # Question text

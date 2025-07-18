@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 """
 Django settings for football_trivia project.
 
@@ -40,6 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+# Load .env file variables
+load_dotenv()
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+DEBUG = os.getenv('DEBUG') == 'True'
+DATABASE_URL = os.getenv('DATABASE_URL')
+
 
 # For the Login use.
 LOGIN_REDIRECT_URL = 'home'

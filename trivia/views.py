@@ -13,8 +13,14 @@ def home(request):
 
 
 """
-Displays quiz.
-Processes answers.
+Handles the trivia quiz logic: displays questions, processes answers, and records the score.
+
+Args:
+        request (HttpRequest): The HTTP request object.
+
+Returns:
+        HttpResponse: Renders the quiz page on GET requests, 
+                      and renders the results page with the score on POST requests
 """
 @login_required
 def quiz(request):
