@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+"""
+Model for questions
+"""
 class Question(models.Model):
     # Question text
     text = models.CharField(max_length=255)
@@ -10,6 +13,9 @@ class Question(models.Model):
     def __str__(self):
         return self.text
 
+"""
+Model for choices
+"""
 class Choice(models.Model):
     # Related question.
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
@@ -21,6 +27,9 @@ class Choice(models.Model):
     def __str__(self):
         return self.text
 
+    """
+    Model to store the quiz score for each user.
+    """
 class Score(models.Model):
     # User who took quiz
     user = models.ForeignKey(User, on_delete=models.CASCADE)
