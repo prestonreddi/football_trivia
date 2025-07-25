@@ -6,7 +6,13 @@ from django.contrib.auth.models import User
 # Create your views here.
 
 """
-Renders a home page 'home.html'.
+ Render the home page.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: The rendered 'home.html' template
 """
 def home(request):
     return render(request, 'home.html')
@@ -38,9 +44,16 @@ def quiz(request):
                       {'score': score, 'total': len(questions)})
     return render(request, 'quiz.html', {'questions': questions})
 
-
 """
-Displays logged in users score.
+Display the logged-in user's score history.
+
+Retrieves the user's past quiz scores, ordered by date.
+
+Args:
+request (HttpRequest): The HTTP request object.
+
+Returns:
+HttpResponse: The rendered 'profile.html' template showing the user's scores.
 """
 @login_required
 def profile(request):
