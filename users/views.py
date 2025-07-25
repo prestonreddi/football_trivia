@@ -2,11 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
-
-"""
-Handles registration for the user.
-"""
 def register(request):
+    """
+    Handles registration for the user.
+    """
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():

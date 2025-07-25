@@ -3,24 +3,25 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-"""
-Represents a trivia question.
+class Question(models.Model):
+    """
+    Represents a trivia question.
 
-Attributes:
+    Attributes:
         text (str): The text content of the question.
         
-"""
-class Question(models.Model):
+    """
     # Question text
     text = models.CharField(max_length=255)
     # Display question.
     def __str__(self):
         return self.text
 
-"""
-Model for choices
-"""
+
 class Choice(models.Model):
+    """
+    Model for choices
+    """
     # Related question.
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     # Choice text.
@@ -31,10 +32,11 @@ class Choice(models.Model):
     def __str__(self):
         return self.text
 
+  
+class Score(models.Model):
     """
     Model to store the quiz score for each user.
     """
-class Score(models.Model):
     # User who took quiz
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     # Score value.

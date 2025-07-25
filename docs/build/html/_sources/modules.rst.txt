@@ -1,7 +1,7 @@
-trivia
-======
+football_trivia
+===============
 
 .. toctree::
    :maxdepth: 4
 
-   trivia
+   football_trivia
