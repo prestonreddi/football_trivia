@@ -15,3 +15,9 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
+   football_trivia
+   manage
+   modules
+   trivia
+   users
+
