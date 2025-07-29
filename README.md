@@ -1,77 +1,90 @@
-# ⚽ Football Trivia
+⚽ Football Trivia
+A Django-based web application for football trivia quizzes and polls. Users can register, log in, participate in polls, and read trivia content. The project includes Docker support for containerized deployment and developer documentation generated with Sphinx.
 
-A Django-based web application for football trivia quizzes and polls. Users can register, log in, participate in polls, and view trivia content. The project supports Docker for containerized deployment and includes developer documentation generated with Sphinx.
+🚀 Features
+User registration and authentication system
+Football trivia polls and voting (only for logged-in users)
+Trivia blog-like content
+Docker support for easy deployment
+Developer documentation generated with Sphinx
 
----
+📋 What to Expect
+After setup, users will be able to:
+Register and log into their accounts
+Browse trivia polls and vote
+Read football-related trivia articles and quizzes
+Interact with content in a clean and responsive interface
 
-## 🚀 Features
 
-- User registration and login with authentication  
-- Polls where only logged-in users can vote  
-- Display of football trivia questions and answers  
-- Docker support for easy deployment  
-- Developer documentation generated with Sphinx  
-
----
-
-## 📋 What to Expect
-
-After setting up and running the application, users will be able to:
-
-- Register a new account  
-- Log in securely  
-- Browse football trivia polls  
-- Vote on polls (only if logged in)  
-- View trivia content in a blog-like format  
-
----
-
-## 🛠️ How to Use This Project
-
-### 1. Clone the repository
-
-```bash
+🛠️ Local Setup Instructions
+1. Clone the repository
 git clone https://github.com/prestonreddi/football_trivia.git
 cd football_trivia
-## Environment Variables
 
-The following environment variables can be used to configure the project:
+2. Set up a virtual environment
+python -m venv env
 
-- `DEBUG`: Set to `"True"` or `"False"` (default: `"True"`)
-- `ALLOWED_HOSTS`: A comma-separated list of allowed hosts (default: `"localhost,127.0.0.1"`)
+Activate the virtual environment:
+Windows:
+.\env\Scripts\activate
+macOS/Linux:
+source env/bin/activate
 
-Example `.env` file:
+3. Install dependencies
+pip install -r requirements.txt
 
----
-## How to Use the Application
+4. Configure environment variables
+Create a .env file in the root directory with the following content:
 
-Once the application is running locally or via Docker, open your browser and go to:
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
 
-[http://localhost:8000](http://localhost:8000)
+5. Apply migrations
+python manage.py migrate
 
-You will see the homepage welcoming you to Football Trivia.
+6. Create a superuser
+python manage.py createsuperuser
 
-- **Register:** Create a new user account using the registration form.  
-- **Login:** Access your account with your credentials.  
-- **Polls:** Browse trivia polls and vote on your favorite answers (only available when logged in).  
-- **Trivia Blog:** Read football trivia posts and quizzes.  
-- **Logout:** Securely log out when finished.
+7. Run the development server
+python manage.py runserver
+Visit the app at: http://localhost:8000
 
-This application is designed to test and expand your football knowledge with interactive polls and trivia content.
+🐳 Docker Setup 
+You can also run the app using Docker:
 
----
+1. Build the Docker image
+docker build -t football_trivia .
 
-## What to Expect
-
-- User-friendly registration and login system  
-- Secure voting restricted to authenticated users  
-- Dynamic display of football trivia questions and results  
-- Responsive design for smooth browsing  
-
----
-
-## Developer Documentation
-
-Detailed code documentation is available and can be generated locally using Sphinx. Follow the instructions in the "Developer Documentation" section to build and view the docs.
+2. Run the container
+docker run -d -p 8000:8000 football_trivia
+Visit: http://localhost:8000
 
 
+🧩 How to Use the Application
+Register: Create a new user account
+Login: Access your account using your credentials
+Polls: Browse trivia questions and cast your vote (authentication required)
+Trivia Blog: Read through football-related facts and content
+Logout: Securely sign out
+
+🧑‍💻 Developer Documentation 
+This project includes developer documentation built using Sphinx.
+
+1. Ensure dependencies are installed
+pip install -r requirements.txt
+
+2. Navigate to the docs directory
+cd docs
+
+3. Build the HTML documentation
+make html
+
+4. Open the documentation
+Windows: Open _build\html\index.html in your browser
+
+macOS/Linux: Open _build/html/index.html in your browser
+
+
+👤 Author
+Preston Reddi
+GitHub: prestonreddi
