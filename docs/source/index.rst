@@ -17,4 +17,5 @@ documentation for details.
 
    modules
    football_trivia
+   trivia
 
